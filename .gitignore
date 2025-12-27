@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+
+# Test artifacts
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
