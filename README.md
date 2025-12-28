@@ -156,3 +156,13 @@ Policy Evaluation
 Human Escalation (if required)
    ↓
 Decision + Audit Log
+
+## Built on AgenticAIPlatform9
+
+This platform is a vertical, enterprise-grade implementation inspired by
+the agentic design patterns and orchestration principles developed in:
+
+➡ https://github.com/veerendra-saraswathi/AgenticAIPlatform9
+
+Platform9 serves as the experimental and architectural foundation,
+while Platform10 focuses on production-ready workflows.
