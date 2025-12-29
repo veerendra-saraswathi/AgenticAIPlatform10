@@ -1,0 +1,14 @@
+{
+  "case_id": "CASE-REVIEW-001",
+  "transaction": {
+    "amount": 120000,
+    "country": "IN",
+    "tx_count": 5,
+    "vendor_id": "VENDOR-999"
+  },
+  "context": {
+    "channel": "UPI",
+    "customer_segment": "RETAIL",
+    "customer_tenure_days": 12
+  }
+}
