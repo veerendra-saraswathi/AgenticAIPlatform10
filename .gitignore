@@ -1,26 +1,58 @@
+# ===============================
 # Python
+# ===============================
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
+build/
+dist/
 
+# ===============================
 # Virtual environments
+# ===============================
 venv/
 .env
+.envrc
 
+# ===============================
 # Test artifacts
+# ===============================
 .pytest_cache/
+.coverage
+htmlcov/
 
-# OS
+# ===============================
+# OS files
+# ===============================
 .DS_Store
+Thumbs.db
 
-# IDEs
+# ===============================
+# IDEs / Editors
+# ===============================
 .vscode/
 .idea/
 
-__pycache__/
-*.pyc
-venv/
-.pytest_cache/
-.DS_Store
+# ===============================
+# Local data / examples
+# ===============================
 data/
+*.db
+
+# ===============================
+# Replay artifacts (audit logs)
+# ===============================
+replay_logs/
+
+# ===============================
+# Cryptographic signing keys
+# ===============================
+replay_private_key.pem
+replay_public_key.pem
+
+# ===============================
+# Misc
+# ===============================
+*.log

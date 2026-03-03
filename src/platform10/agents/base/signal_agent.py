@@ -1,8 +1,8 @@
 """
-Base contract for all signal-producing agents.
+Base class for all signal agents.
 
-SignalAgents are deterministic, auditable, and side-effect free.
-They take a FraudCase and return a structured signal dict.
+Enterprise-safe execution contract.
+Agents operate on execution context, not raw dict chaining.
 """
 
 from abc import ABC, abstractmethod
@@ -13,28 +13,52 @@ from platform10.contracts.fraud_case import FraudCase
 
 class SignalAgent(ABC):
     """
-    Abstract base class for all fraud / risk signal agents.
+    Base class for fraud signal agents.
+
+    Execution contract:
+        input_data = {
+            "case": FraudCase,
+            "signals": list,
+            ...
+        }
     """
 
-    #: Unique agent name (used in audit logs)
-    name: str
+    name: str = "base-signal-agent"
+
+    def run(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Standard execution entry point expected by runtime engine.
+        """
+
+        # Ensure context container exists
+        if "case" not in input_data:
+            raise ValueError(
+                "Execution context must contain 'case'"
+            )
+
+        case = input_data["case"]
+
+        if not isinstance(case, FraudCase):
+            case = FraudCase(**case)
+
+        # Ensure signals list exists
+        if "signals" not in input_data:
+            input_data["signals"] = []
+
+        result = self.evaluate(case)
+
+        if not isinstance(result, dict):
+            raise TypeError(
+                f"{self.__class__.__name__}.evaluate() must return dict"
+            )
+
+        input_data["signals"].append(result)
+
+        return input_data
 
     @abstractmethod
     def evaluate(self, case: FraudCase) -> Dict[str, Any]:
         """
-        Evaluate a fraud case and return a signal.
-
-        Requirements:
-        - Must be deterministic
-        - Must not mutate the case
-        - Must return JSON-serializable output
-        - Must be explainable
-
-        Example return:
-        {
-            "agent": "geo-risk-agent",
-            "risk": "HIGH",
-            "details": {...}
-        }
+        Deterministic business logic.
         """
-        raise NotImplementedError
+        pass
