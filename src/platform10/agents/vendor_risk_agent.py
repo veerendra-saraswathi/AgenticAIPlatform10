@@ -1,14 +1,17 @@
-def assess_vendor_risk(entity: dict) -> dict:
-    """
-    Evaluates historical risk of the entity involved in fraud alert.
-    """
-    history = entity.get("historical_risk", 0)
+"""
+Vendor Risk Agent
+-----------------
+Provides both:
+- Class-based agent (platform standard)
+- Functional adapter (legacy workflows)
+"""
 
-    return {
-        "historical_risk": history,
-        "entity_risk": (
-            "HIGH" if history >= 70 else
-            "MEDIUM" if history >= 40 else
-            "LOW"
-        )
-    }
+class VendorRiskAgent:
+    def run(self, context: dict) -> dict:
+        risk = "HIGH" if context.get("vendor_score", 0) > 70 else "LOW"
+        return {"vendor_risk": risk}
+
+
+# 🔁 FUNCTIONAL ADAPTER FOR WORKFLOWS
+def assess_vendor_risk(context: dict) -> dict:
+    return VendorRiskAgent().run(context)

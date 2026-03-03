@@ -1,0 +1,13 @@
+{
+  "case_id": "CASE-FLAG-001",
+  "transaction": {
+    "amount": 450000,
+    "country": "RU",
+    "tx_count": 92,
+    "vendor_id": "VENDOR-666"
+  },
+  "context": {
+    "channel": "CARD",
+    "customer_segment": "CORPORATE"
+  }
+}

@@ -1,7 +1,30 @@
 def supervisor_decision(analysis: dict) -> dict:
     """
-    Supervisor logic for Fraud Triage.
+    Supervisor policy for fraud triage decisions.
     """
+
+    high_signals = [
+        k for k, v in analysis.items()
+        if v == "HIGH"
+    ]
+
+    if len(high_signals) >= 2:
+        return {
+            "decision": "PENDING",
+            "reason": "Multiple high-risk indicators detected"
+        }
+
+    if len(high_signals) == 1:
+        return {
+            "decision": "REVIEW",
+            "reason": "Single high-risk indicator detected"
+        }
+
+    return {
+        "decision": "CLEAR",
+        "reason": "No significant fraud indicators"
+    }
+
 
     if analysis.get("fraud_risk") == "HIGH":
         return {

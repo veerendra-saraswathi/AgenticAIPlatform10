@@ -9,6 +9,7 @@
   "context": {
     "channel": "UPI",
     "customer_segment": "RETAIL",
-    "customer_tenure_days": 12
+    "customer_tenure_days": 12,
+    "tx_count_last_10_min": 14
   }
 }

@@ -1,0 +1,2 @@
+[console_scripts]
+platform10 = cli:main
