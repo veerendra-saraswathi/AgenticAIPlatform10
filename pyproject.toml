@@ -24,3 +24,6 @@ python_functions = [
     "test_*",
 ]
 addopts = "-ra -q"
+
+[project.scripts]
+platform10 = "platform10.cli:main"
