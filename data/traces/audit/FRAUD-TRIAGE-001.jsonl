@@ -1,0 +1,2 @@
+{"timestamp": "2026-01-04T09:10:20.810878", "execution_id": "FRAUD-TRIAGE-001", "event_type": "WORKFLOW_STARTED", "details": {"workflow": "fraud_triage"}}
+{"timestamp": "2026-01-04T09:10:20.811528", "execution_id": "FRAUD-TRIAGE-001", "event_type": "WORKFLOW_COMPLETED", "details": {"result": {"tx_count": 12, "country": "RU", "vendor_score": 80, "fraud_risk": "HIGH", "vendor_risk": "HIGH"}}}

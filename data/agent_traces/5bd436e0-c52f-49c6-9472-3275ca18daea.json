@@ -1,0 +1,1 @@
+{"execution_id": "5bd436e0-c52f-49c6-9472-3275ca18daea", "agent_name": "fraud_signal_agent", "task_type": "fraud_signal_detection", "inputs": {"tx_count_last_10_min": 15}, "signals": {"velocity": "HIGH"}, "decision": "SUSPICIOUS", "reasoning": "Transaction velocity exceeded threshold", "confidence": 0.85, "outcome": null, "timestamp": "2025-12-31T00:34:52.512040"}

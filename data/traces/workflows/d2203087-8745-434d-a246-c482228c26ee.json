@@ -1,0 +1,25 @@
+{
+  "workflow_execution_id": "d2203087-8745-434d-a246-c482228c26ee",
+  "workflow_name": "fraud-triage-workflow",
+  "started_at": "2025-12-31T04:11:17.448550Z",
+  "ended_at": "2025-12-31T04:11:17.449220Z",
+  "agents_invoked": [
+    {
+      "agent": "velocity-signal-agent",
+      "execution_id": "d0b84ef3-ec47-4645-bba0-6c29de433395",
+      "decision": "HIGH",
+      "confidence": 0.9,
+      "metadata": {}
+    }
+  ],
+  "final_decision": "HOLD_TRANSACTION",
+  "final_confidence": 0.9,
+  "explainability": {
+    "aggregation": "weighted_mean",
+    "agents": {
+      "velocity": "HIGH"
+    }
+  },
+  "human_review_required": false,
+  "status": "COMPLETED"
+}

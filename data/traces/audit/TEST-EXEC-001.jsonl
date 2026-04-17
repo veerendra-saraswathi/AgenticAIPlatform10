@@ -1,0 +1,1 @@
+{"timestamp": "2026-01-04T09:07:58.578890", "execution_id": "TEST-EXEC-001", "event_type": "EXECUTION_POLICY_VIOLATION", "details": {"agent": "DummyAgent", "policy": {"max_tokens": 100, "max_latency_ms": 10000}, "metrics": {"tokens": 120, "latency_ms": 0}, "reason": "Token budget exceeded: 120 > 100"}}

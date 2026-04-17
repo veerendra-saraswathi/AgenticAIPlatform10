@@ -1,0 +1,211 @@
+{
+  "final_context": {
+    "case": {
+      "case_id": "CASE-001",
+      "context": {
+        "location_mismatch": true,
+        "tx_count_last_10_min": 12
+      },
+      "transaction": {
+        "amount": 25000,
+        "currency": "INR",
+        "tx_count": 35
+      }
+    },
+    "risk": "HIGH",
+    "risk_summary": {
+      "high_signals": 1,
+      "medium_signals": 1,
+      "total_signals": 3
+    },
+    "signals": [
+      {
+        "agent": "velocity-signal-agent",
+        "risk": "MEDIUM",
+        "signal_type": "velocity_risk",
+        "tx_count": 35
+      },
+      {
+        "agent": "time-window-velocity-signal-agent",
+        "risk": "HIGH",
+        "signal_type": "time_window_velocity_risk",
+        "tx_count_last_10_min": 12
+      },
+      {
+        "agent": "location-signal-agent",
+        "country": null,
+        "risk": "UNKNOWN",
+        "signal_type": "geo_risk"
+      }
+    ],
+    "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+  },
+  "input_snapshot": {
+    "case": {
+      "case_id": "CASE-001",
+      "context": {
+        "location_mismatch": true,
+        "tx_count_last_10_min": 12
+      },
+      "transaction": {
+        "amount": 25000,
+        "currency": "INR",
+        "tx_count": 35
+      }
+    },
+    "signals": [],
+    "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+  },
+  "integrity_hash": "sha256:ed1c2ec00559772bbd113026c89f690db36f3fc458899dcaf095e8f66612f08f",
+  "previous_hash": "GENESIS",
+  "signature": "P/WEw7p2Ga7BysTvjwyuIch9zC/MXncshKRtrs3fbKgH48nUg8XPMbtj8EJoO1DAOPnp6ZqKNdpFbB7gy/T/Bw==",
+  "signing_algorithm": "ed25519",
+  "steps": [
+    {
+      "agent": "velocity-signal-agent",
+      "output_snapshot": {
+        "case": {
+          "case_id": "CASE-001",
+          "context": {
+            "location_mismatch": true,
+            "tx_count_last_10_min": 12
+          },
+          "transaction": {
+            "amount": 25000,
+            "currency": "INR",
+            "tx_count": 35
+          }
+        },
+        "signals": [
+          {
+            "agent": "velocity-signal-agent",
+            "risk": "MEDIUM",
+            "signal_type": "velocity_risk",
+            "tx_count": 35
+          }
+        ],
+        "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+      },
+      "step": 1
+    },
+    {
+      "agent": "time-window-velocity-signal-agent",
+      "output_snapshot": {
+        "case": {
+          "case_id": "CASE-001",
+          "context": {
+            "location_mismatch": true,
+            "tx_count_last_10_min": 12
+          },
+          "transaction": {
+            "amount": 25000,
+            "currency": "INR",
+            "tx_count": 35
+          }
+        },
+        "signals": [
+          {
+            "agent": "velocity-signal-agent",
+            "risk": "MEDIUM",
+            "signal_type": "velocity_risk",
+            "tx_count": 35
+          },
+          {
+            "agent": "time-window-velocity-signal-agent",
+            "risk": "HIGH",
+            "signal_type": "time_window_velocity_risk",
+            "tx_count_last_10_min": 12
+          }
+        ],
+        "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+      },
+      "step": 2
+    },
+    {
+      "agent": "location-signal-agent",
+      "output_snapshot": {
+        "case": {
+          "case_id": "CASE-001",
+          "context": {
+            "location_mismatch": true,
+            "tx_count_last_10_min": 12
+          },
+          "transaction": {
+            "amount": 25000,
+            "currency": "INR",
+            "tx_count": 35
+          }
+        },
+        "signals": [
+          {
+            "agent": "velocity-signal-agent",
+            "risk": "MEDIUM",
+            "signal_type": "velocity_risk",
+            "tx_count": 35
+          },
+          {
+            "agent": "time-window-velocity-signal-agent",
+            "risk": "HIGH",
+            "signal_type": "time_window_velocity_risk",
+            "tx_count_last_10_min": 12
+          },
+          {
+            "agent": "location-signal-agent",
+            "country": null,
+            "risk": "UNKNOWN",
+            "signal_type": "geo_risk"
+          }
+        ],
+        "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+      },
+      "step": 3
+    },
+    {
+      "agent": "risk-classifier-agent",
+      "output_snapshot": {
+        "case": {
+          "case_id": "CASE-001",
+          "context": {
+            "location_mismatch": true,
+            "tx_count_last_10_min": 12
+          },
+          "transaction": {
+            "amount": 25000,
+            "currency": "INR",
+            "tx_count": 35
+          }
+        },
+        "risk": "HIGH",
+        "risk_summary": {
+          "high_signals": 1,
+          "medium_signals": 1,
+          "total_signals": 3
+        },
+        "signals": [
+          {
+            "agent": "velocity-signal-agent",
+            "risk": "MEDIUM",
+            "signal_type": "velocity_risk",
+            "tx_count": 35
+          },
+          {
+            "agent": "time-window-velocity-signal-agent",
+            "risk": "HIGH",
+            "signal_type": "time_window_velocity_risk",
+            "tx_count_last_10_min": 12
+          },
+          {
+            "agent": "location-signal-agent",
+            "country": null,
+            "risk": "UNKNOWN",
+            "signal_type": "geo_risk"
+          }
+        ],
+        "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+      },
+      "step": 4
+    }
+  ],
+  "timestamp": "2026-03-03T19:58:49.061291",
+  "trace_id": "82ff838c-4c6c-4a1c-8fc9-df6fb1f673fd"
+}
